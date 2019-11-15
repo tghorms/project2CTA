@@ -1,0 +1,12 @@
+
+
+
+build your own environment using the yml:
+	conda env create -f environment.yml
+
+
+
+creating your yml if we need to update it.
+1. switch to the enviroment
+2. enter the following command in git bash:
+	conda env export > environment.yml
