@@ -4,7 +4,7 @@
     font-weight: bold;
  }
  body{
-    background-color: rgb(147, 205, 209)
+    background-color: rgb(147, 205, 209)! important
  }
  #comparisonoflatitude{
     margin-top: 60px;
@@ -13,30 +13,8 @@
  p{
     font-family: Verdana, Geneva, sans-serif;
  }
- #visualizationsofdata{
+ 
+ .dataframe{
     margin-top: 60px;
-    text-align: left;
- }
- #latitudetotemperature{
-    margin-top: 60px;
-    text-align: center;
- }
- #latitudetohumidity{
-    margin-top: 60px;
-    text-align: center;
- }
- #latitudetocloudiness{
-    margin-top: 60px;
-    text-align: center;
- }
- #latitudetowind{
-    margin-top: 60px;
-    text-align: center;
- }
- #comparisonsof{
-    margin-top: 40px;
- }
- #data{
-    margin-top: 20px;
  }
  
