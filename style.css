@@ -1,13 +1,42 @@
-/* remove default margin and padding from body */
-body {
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* set map, body, and html to 100% of the screen size */
-  #map,
-  body,
-  html {
-    height: 100%;
-  }
-  
+.title{
+    color: #211030;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+ }
+ body{
+    background-color: rgb(147, 205, 209)
+ }
+ #comparisonoflatitude{
+    margin-top: 60px;
+    text-align: left;
+ }
+ p{
+    font-family: Verdana, Geneva, sans-serif;
+ }
+ #visualizationsofdata{
+    margin-top: 60px;
+    text-align: left;
+ }
+ #latitudetotemperature{
+    margin-top: 60px;
+    text-align: center;
+ }
+ #latitudetohumidity{
+    margin-top: 60px;
+    text-align: center;
+ }
+ #latitudetocloudiness{
+    margin-top: 60px;
+    text-align: center;
+ }
+ #latitudetowind{
+    margin-top: 60px;
+    text-align: center;
+ }
+ #comparisonsof{
+    margin-top: 40px;
+ }
+ #data{
+    margin-top: 20px;
+ }
+ 
