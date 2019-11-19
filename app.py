@@ -36,11 +36,11 @@ app = Flask(__name__)
 
 # The database URI
 # app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:Whatthefuck100@localhost:5432/CTA"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://postgres:Whatthefuck100@localhost:5432/CTA"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://postgres:taylormade@localhost:5432/CTA"
 
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
 
-engine = create_engine("postgresql://postgres:Whatthefuck100@localhost:5432/CTA")
+engine = create_engine("postgresql://postgres:taylormade@localhost:5432/CTA")
 
 db = SQLAlchemy(app)
 
@@ -83,7 +83,7 @@ def stop_data():
         results_dict["lat"] = f
         results_dict["lon"] = g
         all_results.append(results_dict)
-    return jsonify(results)
+    return jsonify(all_results)
 
 
 if __name__ == '__main__':
