@@ -1,0 +1,21 @@
+
+ body{
+    background-color: white;
+ }
+
+ .big-banner{
+    background-image: url('../images/rail-industry-abstract-image.jpg');
+ }
+
+ .navbar {
+   background-color: lightgrey;
+}
+
+@media only screen and (max-width: 767px) {
+   .navbar{
+       background-color: lightsalmon;
+   }
+   body {
+       background-color: rgb(233, 229, 229)
+   }
+}
