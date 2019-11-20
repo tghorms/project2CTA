@@ -1,0 +1,12 @@
+1: follow directions in here to update postgress
+https://www.bostongis.com/PrinterFriendly.aspx?content_name=postgis_tut01
+
+2:make sure you have the stop tables
+
+3:open query tool and run the giscrap.sql file and run
+
+4:open query tool and run the  createsgeography.sql file and run.
+
+
+4:open query tool and run the  create stops_geo function.sql file and run.
+
