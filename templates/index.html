@@ -77,7 +77,8 @@
             live train data for each stop on each train route in Chicago and create an interactive map.</p>
         </div>
       </div>
-      <img src="{{ url_for('static', filename='img/chicago-map.jpg') }}" class="img-fluid" alt="">
+      <div id= "map"></div>
+      <!-- <img src="{{ url_for('static', filename='img/chicago-map.jpg') }}" class="img-fluid" alt=""> -->
     </div>
   </section>
 
@@ -88,6 +89,7 @@
       <!-- Featured Project Row -->
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
+            <div id= "graph_table"></div>
           <img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/train.jpg') }}" alt="">
         </div>
         <div class="col-xl-4 col-lg-5">
@@ -101,6 +103,7 @@
       <!-- Project One Row -->
       <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
         <div class="col-lg-6">
+            <div id= "data_table"></div>
           <img class="img-fluid" src="{{ url_for('static', filename='img/train.jpg') }}" alt="">
         </div>
         <div class="col-lg-6">
@@ -233,6 +236,9 @@
 
   <script src="{{ url_for('static', filename='js/config.js') }}"></script>
   <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
+  <script type="text/javascript">
+    myFunc({{data|safe}})
+ </script>
 </body>
 
 </html>
