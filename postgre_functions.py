@@ -18,8 +18,6 @@ def config(filename='database.ini', section='postgresql'):
         raise Exception('Section {0} not found in the {1} file'.format(section, filename))
  
     return db
-
-
 def Testconnect():
     """ Connect to the PostgreSQL database server """
     conn = None
@@ -50,23 +48,18 @@ def Testconnect():
         if conn is not None:
             conn.close()
             print('Database connection closed.')
+
+
 def basic_query():
-    """ query data from the vendors table """
+    #  """ get data from geojson conversion function on the server """
     conn = None
     try:
         params = config()
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
         cur.callproc('stops_geojson')
-        temp=cur.fetchall()
+        temp = cur.fetchall()
         return temp
-        # 'cur.execute('select myoutput from stops_geojson()')
-        # 'print("The number of rows: ", cur.rowcount)
-        # 'row = cur.fetchone()
-        # # pprint(row)
-        # 'return row
-     
- 
         cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
@@ -74,3 +67,20 @@ def basic_query():
         if conn is not None:
             conn.close()
 
+
+def rider_query():
+    """ query data from the vendors table """
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+        cur.execute('select station_id, average_rides from ridership')
+        temp=cur.fetchall()
+        return temp
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()

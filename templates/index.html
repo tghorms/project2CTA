@@ -8,14 +8,23 @@
   <meta name="author" content="">
   <title>CTA</title>
 
-
+  <!-- leaflet css & JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+    crossorigin=""></script>
   <!-- Bootstrap core CSS -->
   <!-- <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
   <!-- <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Custom fonts for this template -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}">
   <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <link
@@ -24,14 +33,16 @@
   <!-- Our CSS -->
   <!-- <link href="../static/css/grayscale.css" rel="stylesheet"> -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/grayscale.css') }}">
+    <!-- mapbox gl js -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body id="page-top">
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <i class="fas fa-train fa-2x mb-2 text-black"></i>
+      <i class="fas fa-train fa-2x mb-2 text-black"></i>
       <a class="navbar-brand js-scroll-trigger" href="#page-top">CTA</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -68,34 +79,36 @@
 
   <!-- About Section -->
   <section id="about" class="about-section text-center">
-    <div class="container">
+    <div class="container" style="position: relative;">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2 class="text-white mb-4">Routes</h2>
           <p class="text-white-50">Using the CTA API
-            <a href="https://www.transitchicago.com/developers/traintracker/"" target="_blank" >(preview page)</a>. We were able to track
+            <a href="https://www.transitchicago.com/developers/traintracker/" target=" _blank">(preview page)</a>. We
+            were able to track
             live train data for each stop on each train route in Chicago and create an interactive map.</p>
         </div>
       </div>
-      <div id= "map"></div>
-      <!-- <img src="{{ url_for('static', filename='img/chicago-map.jpg') }}" class="img-fluid" alt=""> -->
+      <div id="map" style="height: 500px ;width: 700px"></div>
+      
     </div>
   </section>
-
+ 
   <!-- Projects Section -->
+
   <section id="projects" class="projects-section bg-light">
     <div class="container">
 
       <!-- Featured Project Row -->
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
-            <div id= "graph_table"></div>
-          <img class="img-fluid mb-3 mb-lg-0" src="{{ url_for('static', filename='img/train.jpg') }}" alt="">
+          <div id="graph_table"></div>
+          
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
-            <h4>Arrival Times</h4>
-            <p class="text-black-50 mb-0">A break down of the arrival times for each train route.</p>
+            <h4>Train Utilization</h4>
+            <p class="text-black-50 mb-0">A break down of the the number of riders across 17 years.</p>
           </div>
         </div>
       </div>
@@ -103,15 +116,15 @@
       <!-- Project One Row -->
       <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
         <div class="col-lg-6">
-            <div id= "data_table"></div>
-          <img class="img-fluid" src="{{ url_for('static', filename='img/train.jpg') }}" alt="">
+          <div id="data_table"></div>
+          <img class="img-fluid" src="{{ url_for('static', filename='img/schedule.png') }}" alt="">
         </div>
         <div class="col-lg-6">
           <div class="bg-black text-center h-100 project">
             <div class="d-flex h-100">
               <div class="project-text w-100 my-auto text-center text-lg-left">
                 <h4 class="text-white">Data</h4>
-                <p class="mb-0 text-white-50">Put description of another graph here.</p>
+                <p class="mb-0 text-white-50">A table that shows arrival times per stop.</p>
                 <hr class="d-none d-lg-block mb-0 ml-0">
               </div>
             </div>
@@ -130,7 +143,7 @@
           <i class="fas fa-train fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Group Members</h2>
 
-          
+
 
         </div>
       </div>
@@ -196,7 +209,8 @@
         </div>
 
         <div class="social d-flex justify-content-center">
-          <a href="https://twitter.com/cta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"  target="_blank" class="mx-2">
+          <a href="https://twitter.com/cta?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"
+            class="mx-2">
             <i class="fab fa-twitter"></i>
           </a>
         </div>
@@ -208,9 +222,9 @@
   <footer class="bg-black small text-center text-white-50">
     <div class="container">
       Copyright &copy; Project 3 2019
-    </div>
+    </div>    
   </footer>
-
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="../vendor/jquery/jquery.min.js"></script> -->
   <!-- <link rel="stylesheet" type="js" href="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"> -->
@@ -235,10 +249,12 @@
   <script type="text/javascript" src="/static/js/grayscale.js"></script>
 
   <script src="{{ url_for('static', filename='js/config.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/logicv2.js') }}"></script>
   <script type="text/javascript">
-    myFunc({{data|safe}})
- </script>
+    myFunc({{ data| safe}})
+    
+  </script>
+  <p id='knightrider' hidden>{{rider}}</p>
 </body>
 
 </html>
