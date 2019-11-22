@@ -1,0 +1,1 @@
+web: gunicorn project2CTA.app:app
