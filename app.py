@@ -4,11 +4,18 @@ from flask_sqlalchemy import SQLAlchemy
 from jpy_apiv2 import (runme,arrival_call)
 import pandas as pd
 import json 
+import os
 from flask import (
     Flask,
     render_template,
     jsonify
 )
+app = Flask(__name__)
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://localhost/cta', '')
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '')
+db = SQLAlchemy(app)
+
 def myrun():
     data = basic_query()
     push = [lis[0] for lis in data]
@@ -20,7 +27,6 @@ def ridership():
     push = dict(values)
     return push 
 
-app = Flask(__name__)
 @app.route("/")
 def index():
     'Render basic crap'
